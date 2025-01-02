@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This text is initially visible.
+  </div>
+  <button onclick="myFunction()">Click Me</button>
+
+  <script>
+    function myFunction() {
+      //Correct way to set innerHTML by appending new content, maintaining existing content
+      let existingContent = document.getElementById("myDiv").innerHTML;
+      document.getElementById("myDiv").innerHTML = "<p>This is a paragraph.</p>" + existingContent;
+    }
+  </script>
+</body>
+</html>
